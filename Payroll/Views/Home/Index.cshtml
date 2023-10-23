@@ -1,0 +1,27 @@
+﻿@{
+    ViewData["Title"] = "Menu";
+}
+
+<div class="d-flex justify-content-between align-items-center mt-5">
+    <div class="card" style="width: 18rem;">
+        <img height="150" src="https://www.iq.com.br/wp-content/uploads/2018/08/shutterstock_749455387.jpg" class="card-img-top" alt="Imagem de Funcionários">
+        <div class="card-body">
+            <h5 class="card-title">Total de funcionários cadastrados</h5>
+            <p class="card-text">@ViewBag.EmployeesTotal</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img height="150" src="https://www.saopaulo.sp.gov.br/wp-content/uploads/2016/11/dinheiro-2-%C3%A1lbum-divulga%C3%A7%C3%A3o.jpg" class="card-img-top" alt="Imagem de Salário">
+        <div class="card-body">
+            <h5 class="card-title">Salário total pago</h5>
+            <p class="card-text">R$ @ViewBag.SalaryTotal</p>
+        </div>
+    </div>
+    <div class="card" style="width: 18rem;">
+        <img height="150" src="https://evalart.com/wp-content/uploads/2022/07/nggallery_import/Los-5-mejores-incentivos-para-empleados-bonus-Evalart.png" class="card-img-top" alt="Imagem de Salário">
+        <div class="card-body">
+            <h5 class="card-title">Bonus total pago</h5>
+            <p class="card-text">R$ @ViewBag.BonusTotal</p>
+        </div>
+    </div>
+</div>

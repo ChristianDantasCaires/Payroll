@@ -1,0 +1,58 @@
+﻿@model Payroll.Models.Employee
+
+@{
+    ViewData["Title"] = "Cadastro de funcionários";
+}
+
+<h1 class="mt-4">Cadastro de funcionários</h1>
+<br />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group mb-3">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3 mb-3">
+                <label asp-for="JoinDate" class="control-label"></label>
+                <input asp-for="JoinDate" class="form-control" />
+                <span asp-validation-for="JoinDate" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3 mb-3">
+                <label asp-for="BaseSalary" class="control-label"></label>
+                <input asp-for="BaseSalary" class="form-control numeric-input" />
+                <span asp-validation-for="BaseSalary" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3 mb-3">
+                <label asp-for="Bonus" class="control-label"></label>
+                <input asp-for="Bonus" class="form-control numeric-input" />
+                <span asp-validation-for="Bonus" class="text-danger"></span>
+            </div>
+            <div class="form-group mt-3 mb-3">
+                <label asp-for="Absence" class="control-label"></label>
+                <input type="text" asp-for="Absence" class="form-control numeric-input" />
+                <span asp-validation-for="Absence" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Salvar" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="mt-4">
+    <a asp-controller="Home" asp-action="Index">Voltar ao Menu</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+    <script>
+        $('.numeric-input').on('input', function () {
+            this.value = this.value.replace(/[^0-9]/g, '');
+        });
+    </script>
+}
